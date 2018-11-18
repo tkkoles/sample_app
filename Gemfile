@@ -15,7 +15,8 @@ group :production do
   gem 'pg', '0.18.2'
   gem 'rails_12factor', '0.0.3'
 end
-
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'devise', '~> 4.5'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
