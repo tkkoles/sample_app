@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p id="info"><%= notice %></p>
 
 <h1>Pins</h1>
 
@@ -14,9 +14,11 @@
     <% @pins.each do |pin| %>
       <tr>
         <td><%= pin.description %></td>
-        <td><%= link_to 'Show', pin %></td>
-        <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
-        <td><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Pokaź', pin %></td>
+        <% if pin.user == current_user %>
+        <td><%= link_to 'Edycja', edit_pin_path(pin) %></td>
+        <td><%= link_to 'Usuń', pin, method: :delete, data: { confirm: 'Bankowo?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Pin', new_pin_path %>
+<%= link_to 'Nowy wpis', new_pin_path %>
